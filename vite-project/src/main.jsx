@@ -13,12 +13,13 @@ import UEWD from './day8/UEWD'
 import UseMemoV0 from './day9'
 import { Day13UseMemoExampleOneBestWay, Day13UseMemoExampleOneGoodWay } from './day10/bettercode'
 import { Day13AsyncExampleBad, Day13AsyncExampleGood } from './day10/betterrenderexample'
+import Day11Usecallback from './day11usecallback/example1'
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Day13AsyncExampleGood/>
+    <Day11Usecallback/>
     
 
   </React.StrictMode>
