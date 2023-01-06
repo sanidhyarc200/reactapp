@@ -1,50 +1,74 @@
+
 import { useState } from "react";
-import InputBox from "../day6todoappincomponent/inputboxtodoc";
+import { GitRepo } from "./newcomp";
 
-const movieItem = {
-  padding: 12,
-  margin: 12,
-  border: "1px solid silver",
-  backgroundColor: "#325795",
-  color: "#fff",
-};
-const MoviesList = () => {
-  const [search, setSearch] = useState("");
-  const [movies, setMovies] = useState([]);
-
-  const onMoviesSearch = (key, value) => {
-    console.log({ key, value });
-    setSearch(value);
-
-    fetch(`https://dummyjson.com/products/search?q=${value}`)
+export const GetProfile = () => {
+  const [inputData, setInputData] = useState(""); //inital box for taking userName
+  const [userInfo, setuserInfo] = useState([]); //complete data of api
+  const [repoData, setRepoData] = useState([]);
+  const findUser = () => {
+    console.log("SK@finduser");
+    fetch(`https://api.github.com/users/${inputData}/repos`)
       .then((data) => data.json())
-      .then((data) => setMovies(data.products));
+      .then((data) => setuserInfo(data));
+  };
+  const showMeRepo = (repoId) => {
+    userInfo.map((item) => {
+      if (item.id === repoId) {
+        console.log("SK@i am inside");
+        console.log("SK@", item);
+        setRepoData((pre) => [...pre, item]);
+      }
+    });
   };
   return (
     <>
-      <div style={{ padding: 12}}>
-        <InputBox
-          value={search}
-          onChange={onMoviesSearch}
-          placeholder="Search your Movie over here!"
-        />
-        {search && <p>Searching for : {search}</p>}
-      </div>
-      <div>
-        <h1>My Movies</h1>
-        <ul>
-          {movies.map((item) => {
-            return (
-              <li key={item.id} style={movieItem}>
-                <p>{item.title}</p>
-                <p>{item.description}</p>
+      <h3>Enter User Information:</h3>
+      <input
+        type="text"
+        value={inputData}
+        placeholder="Enter UserId"
+        onChange={(e) => setInputData(e.target.value)}
+      />
+      <button onClick={findUser}>Find</button>
+      
+      <ul>
+        {userInfo.map((item) => {
+          return (
+            <span key={item.id}>
+              <li onClick={() => showMeRepo(item.id)}>{item.name}</li>
+              <li>{item.id}</li>
+              <li>{item.description}</li>
+              <li>
+                <img
+                  src={item.owner.avatar_url}
+                  alt=""
+                  width="150px"
+                  height="150px"
+                />
               </li>
-            );
-          })}
-        </ul>
-      </div>
+            </span>
+          );
+        })}
+      </ul>
+      <ul>
+        {repoData.map((item) => {
+          return (
+            <>
+              <Link key={item.id} to="gitRepo">
+                <GitRepo
+                  key={item.id}
+                  name={item.name}
+                  fork={item.fork}
+                  visibility={item.fork}
+                  default_branch={item.default_branch}
+                  description={item.description}
+                />
+              </Link>
+            </>
+          );
+        })}
+      </ul>
     </>
   );
 };
-
-export default MoviesList;

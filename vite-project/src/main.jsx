@@ -16,13 +16,13 @@ import { Day13AsyncExampleBad, Day13AsyncExampleGood } from './day10/betterrende
 import Day11Usecallback from './day11usecallback/example1'
 import Fun from './day12/dynamicform'
 import GetForm from './day12/dynamicform'
-import GitProfiler from './day14 reactgithubprofilerproject/profiler'
+import { GetProfile } from './day14 reactgithubprofilerproject/profiler'
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <GitProfiler/>
+    <GetProfile/>
     
 
   </React.StrictMode>
