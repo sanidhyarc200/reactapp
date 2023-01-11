@@ -17,13 +17,10 @@ import Day11Usecallback from './day11usecallback/example1'
 import Fun from './day12/dynamicform'
 import GetForm from './day12/dynamicform'
 import { GetProfile } from './day14 reactgithubprofilerproject/profiler'
+import AFix from './day16contextapi/a'
 
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <GetProfile/>
-    
-
-  </React.StrictMode>
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <AFix />
+);
