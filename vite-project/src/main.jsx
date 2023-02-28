@@ -1,26 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import './index.css'
+import Ab from './228task/abc';
+import Appy, { ParentComponent } from './228task/nestedcomments';
 
-import Parentfc from './day5/Day5.2/Parent'
-import { HeartFunc } from './day4/day4.2/like2'
-import Todomain from './day6todoappincomponent/todoincomponent'
-import MoviesList from './day7/searchbox'
-import LifeCycleExample from './day7/lifecycle'
-import { Task } from './day7/day7.2/apifunctionality'
-import UseEffectExample from './day8/useeffect'
-import UEWD from './day8/UEWD'
-import UseMemoV0 from './day9'
-import { Day13UseMemoExampleOneBestWay, Day13UseMemoExampleOneGoodWay } from './day10/bettercode'
-import { Day13AsyncExampleBad, Day13AsyncExampleGood } from './day10/betterrenderexample'
-import Day11Usecallback from './day11usecallback/example1'
-import Fun from './day12/dynamicform'
-import GetForm from './day12/dynamicform'
-import { GetProfile } from './day14 reactgithubprofilerproject/profiler'
-import AFix from './day16contextapi/a'
+import ProductLists from './newreacttask/productlist';
 
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <AFix />
+  <ParentComponent/>
 );

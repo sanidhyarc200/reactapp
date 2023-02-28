@@ -1,13 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+
+import { useState } from 'react';
+import './App2.css'
+import Header from './darkmodelightmode/header'
+import Hero from './darkmodelightmode/Hero'
+
+export const ThemeContext = react.createContext({});
 
 function App() {
-  const [count, setCount] = useState(0)
+  const  [theme, setTheme] = useState('light');
+  
 
   return (
-   <h1 style={{backgroundColor:"blue"}}>Hi Sanidhya</h1>
+    <ThemeContext.Provider value={{theme, setTheme}}>
+    <div>
+      <Header/>
+      <Hero />
+    </div>
+    </ThemeContext.Provider> 
   )
 }
 
-export default App
+export default App;
