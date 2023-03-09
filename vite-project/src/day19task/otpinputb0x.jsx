@@ -98,7 +98,7 @@ class Otpinput extends React.Component {
           />
         </div>
         <Button className="primary" type="submit">
-          Submit
+          Submit otp
         </Button>
       </form>
     );
