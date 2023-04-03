@@ -16,7 +16,7 @@ const ProductLists = () => {
     console.log({ key, value });
     setSearch(value);
 
-    fetch(`https://fakestoreapi.com/products/search?q=${value}`)
+    fetch(`https://fakestoreapi.com/products`)
       .then((data) => data.json())
       .then((data) => setMovies(data.products));
   };

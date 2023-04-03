@@ -1,8 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
+import ECommerceComponent from './smartemail/first';
 
-import Otpinput from './day19task/otpinputb0x';
+
+
+
+
+
 
 
 
@@ -11,5 +16,5 @@ import Otpinput from './day19task/otpinputb0x';
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Otpinput/>
+  <ECommerceComponent/>
 );

@@ -1,12 +1,10 @@
-import Colorfulbutton from "./button";
+import Button from "./button";
 
-function Buttonnew (){
-    return(
-        
-        <div >
-        <Colorfulbutton/>
-        </div>
-        
-    )
-}
-export default Buttonnew;
+export const ButtonUI = () => {
+  return (
+    <>
+      <Button color="primary">Submit</Button>
+      <Button color="danger">Submit2</Button>
+    </>
+  );
+};
