@@ -1,23 +1,14 @@
 
-import { useState } from 'react';
-import './App2.css'
-import Header from './darkmodelightmode/header'
-import Hero from './darkmodelightmode/Hero'
-
-export const ThemeContext = react.createContext({});
+import React from 'react';
+import TeacherStudentComponent from './nestednamefeature/teacherstudent';
 
 function App() {
-  const  [theme, setTheme] = useState('light');
-  
-
   return (
-    <ThemeContext.Provider value={{theme, setTheme}}>
     <div>
-      <Header/>
-      <Hero />
+      <h1>My App</h1>
+      <TeacherStudentComponent />
     </div>
-    </ThemeContext.Provider> 
-  )
+  );
 }
 
 export default App;
