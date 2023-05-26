@@ -1,12 +1,16 @@
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+// index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { Provider } from 'react-redux';
+import store from './floorwalktask/store';
+import TodoListFW from './floorwalktask/components/todoapp';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    < TodoListFW/>
+  </Provider>,
   document.getElementById('root')
 );
+
 
