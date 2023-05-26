@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './floorwalktask/store';
-import TodoListFW from './floorwalktask/components/todoapp';
+import TodoListFW from './floorwalktask/components/maintodo';
 
 ReactDOM.render(
   <Provider store={store}>

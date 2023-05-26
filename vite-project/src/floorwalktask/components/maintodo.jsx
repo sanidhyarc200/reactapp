@@ -12,6 +12,7 @@ const TodoListFW = () => {
   const [currentTodoId, setCurrentTodoId] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredTodos, setFilteredTodos] = useState(null); // State for filtered todos
+  const [searchTerm, setSearchTerm] = useState(''); // State for search term
   const todosPerPage = 5;
 
   const indexOfLastTodo = currentPage * todosPerPage;
@@ -69,6 +70,15 @@ const TodoListFW = () => {
     setFilteredTodos(filteredTodos);
   };
 
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+    setFilteredTodos(
+      todos.filter((todo) => {
+        return todo.text.toLowerCase().includes(e.target.value.toLowerCase());
+      })
+    );
+  };
+
   const onPageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
@@ -79,6 +89,15 @@ const TodoListFW = () => {
       <div className="row mb-4">
         <div className="col">
           <TodoFilter onFilter={handleFilterByDate} /> {/* Pass handleFilterByDate as the onFilter prop */}
+        </div>
+        <div className="col">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Search Todos"
+            value={searchTerm}
+            onChange={handleSearch}
+          />
         </div>
       </div>
       <div className="row mb-4">
@@ -100,25 +119,21 @@ const TodoListFW = () => {
           </form>
         </div>
       </div>
-      <div className="row">
+      <ul className="list-group">
         {currentTodos.map((todo) => (
-          <div key={todo.id} className="col-md-4 mb-4">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">{todo.text}</h5>
-                <div className="d-flex justify-content-end">
-                  <button onClick={() => handleEdit(todo.id, todo.text)} className="btn btn-sm btn-outline-primary me-2">
-                    Edit
-                  </button>
-                  <button onClick={() => handleDelete(todo.id)} className="btn btn-sm btn-outline-danger">
-                    Delete
-                  </button>
-                </div>
-              </div>
+          <li key={todo.id} className="list-group-item d-flex justify-content-between align-items-center">
+            <div>{todo.text}</div>
+            <div>
+              <button onClick={() => handleEdit(todo.id, todo.text)} className="btn btn-sm btn-outline-primary me-2">
+                Edit
+              </button>
+              <button onClick={() => handleDelete(todo.id)} className="btn btn-sm btn-outline-danger">
+                Delete
+              </button>
             </div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
       <Pagination
         todos={filteredTodos || todos} // Use filtered todos if available, otherwise use the original todos
         todosPerPage={todosPerPage}
