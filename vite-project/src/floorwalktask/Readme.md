@@ -16,18 +16,13 @@ filter by date ![Screenshot (42)](https://github.com/sanidhyarc200/reactapp/asse
 
 ![Screenshot (42)](https://github.com/sanidhyarc200/reactapp/assets/71561848/d3793214-9ed1-46ed-8761-7a143421ccc6)
 
-all todos for today
+search todos
 
-![Screenshot (43)](https://github.com/sanidhyarc200/reactapp/assets/71561848/40b88358-da2e-45a6-9d29-b85daf187d1b)
+
+![Screenshot (48)](https://github.com/sanidhyarc200/reactapp/assets/71561848/a65c0da1-2eff-48de-8117-dd516cc4da24)
 
 search for a todo
 
 
-![Screenshot (42)](https://github.com/sanidhyarc200/reactapp/assets/71561848/532c295f-fc86-4e8e-96aa-270f98bd1bb8)
-
-
-
-
-![Screenshot (43)](https://github.com/sanidhyarc200/reactapp/assets/71561848/dd752e15-c701-4ff4-af45-453d0e393cb6)
-
+![Screenshot (47)](https://github.com/sanidhyarc200/reactapp/assets/71561848/3a78823c-ee5d-4da2-b885-a4ef9198cbde)
 
