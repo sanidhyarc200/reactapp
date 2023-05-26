@@ -53,7 +53,8 @@ const TodoListFW = () => {
     setCurrentTodoId(id);
     setNewTodo(text);
   };
-
+// imp note
+// imp note
   const handleDelete = (id) => {
     dispatch(deleteTodo(id));
   };
