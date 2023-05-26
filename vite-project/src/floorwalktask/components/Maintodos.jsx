@@ -53,8 +53,7 @@ const TodoListFW = () => {
     setCurrentTodoId(id);
     setNewTodo(text);
   };
-// imp note
-// imp note
+
   const handleDelete = (id) => {
     dispatch(deleteTodo(id));
   };
@@ -120,21 +119,32 @@ const TodoListFW = () => {
           </form>
         </div>
       </div>
-      <ul className="list-group">
+      <div className="row">
         {currentTodos.map((todo) => (
-          <li key={todo.id} className="list-group-item d-flex justify-content-between align-items-center">
-            <div>{todo.text}</div>
-            <div>
-              <button onClick={() => handleEdit(todo.id, todo.text)} className="btn btn-sm btn-outline-primary me-2">
-                Edit
-              </button>
-              <button onClick={() => handleDelete(todo.id)} className="btn btn-sm btn-outline-danger">
-                Delete
-              </button>
+          <div key={todo.id} className="col-lg-4 col-md-6 mb-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">{todo.text}</h5>
+                <p className="card-text">
+                  Date: {new Date(todo.date).toLocaleDateString()}
+                </p>
+                <button
+                  onClick={() => handleEdit(todo.id, todo.text)}
+                  className="btn btn-sm btn-outline-primary me-2"
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => handleDelete(todo.id)}
+                  className="btn btn-sm btn-outline-danger"
+                >
+                  Delete
+                </button>
+              </div>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
       <Pagination
         todos={filteredTodos || todos} // Use filtered todos if available, otherwise use the original todos
         todosPerPage={todosPerPage}
