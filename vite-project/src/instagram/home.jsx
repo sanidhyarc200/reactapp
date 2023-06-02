@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Container,
   Header,
@@ -50,3 +50,10 @@ const Post = () => {
 };
 
 export default Post;
+
+
+export const Mynewproduct = ()=>{
+    useEffect(()=>{
+      fetch()
+    },[])
+}
