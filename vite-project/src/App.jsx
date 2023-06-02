@@ -1,12 +1,11 @@
-
 import React from 'react';
-import TeacherStudentComponent from './nestednamefeature/teacherstudent';
+import Counterhooktest from './customhooks/component/counter';
 
 function App() {
   return (
     <div>
-      <h1>My App</h1>
-      <TeacherStudentComponent />
+      <h1>React Counter App</h1>
+      <Counterhooktest/>
     </div>
   );
 }
