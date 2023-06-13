@@ -20,10 +20,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import LoginForm from './logintask/form';
+import Parent from './contextapiexplained/parent';
+import Stateexample from './revisioncomponents/state';
+import Useeffectexample1 from './revisioncomponents/useeffectexample';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Useeffectexample1/>
   </React.StrictMode>,
   document.getElementById('root')
 );
