@@ -9,10 +9,10 @@ const Useeffectexample1 = () => {
     },[])
   return (
     <div>
-        <div>
-            {list.map((item) => {return <p>{item.id}{item.title}</p>})}
+        <div style={{height:"40px", width:"40px", display:"flex",alignItems:"center"}}>
+            {list.map((item) => {return <p>{item.title}</p>})}
         </div>
-    <div>Useeffectexample1</div>
+    
     </div>
 
 
