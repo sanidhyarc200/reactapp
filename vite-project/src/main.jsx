@@ -1,16 +1,12 @@
-
-
 import React from 'react';
 import ReactDOM from 'react-dom';
+import FlowCheck from './ExploreRFLOW/Flowcheck';
+import './App.css'
 
-
-import Findcount from './interview1/usestateexample1';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Findcount/>
-  </React.StrictMode>,
+ 
+    <FlowCheck/>,
+  
   document.getElementById('root')
 );
-
-

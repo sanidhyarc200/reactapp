@@ -4,8 +4,10 @@
     "@material-ui/icons": "^4.11.3",
     "bootstrap": "^5.2.3",
     "components": "^0.1.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-bootstrap": "^2.7.2",
     "react-router-dom": "^6.6.1",
+    "reactflow": "^11.7.4",
     "styled": "^1.0.0",
     "styled-components": "^5.3.6",
     "uuid": "^9.0.0"

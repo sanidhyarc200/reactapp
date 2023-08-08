@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.err {
+  color: rgb(228, 22, 22);
+}
+.a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width : 350px;
+  border: 2px solid black;
+}

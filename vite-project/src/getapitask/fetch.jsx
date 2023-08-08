@@ -8,8 +8,11 @@ function Myproduct (){
     useEffect(()=>{
 
         fetch("https://fakestoreapi.com/products").then((data)=>data.json()).then((data)=>setProductlist(data))
-
+                // fetch("").then((data)=>data.json()).then((data.setProductlist(data)))
     },[])
+    // useEffect(()=>{
+
+    // },[])
 
     return(
         <>
