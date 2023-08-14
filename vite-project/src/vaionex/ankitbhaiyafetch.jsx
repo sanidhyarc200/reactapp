@@ -1,36 +1,40 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 
 const Fetchmyapi = () => {
- const [product,setProduct] = useState([]);
- const [search , setSearch] = useState("");
+ const [product, setProduct] = useState([]);
+ const [search, setSearch] = useState("");
 
- useEffect(()=>{
-    fetch("https://fakestoreapi.com/products").then((response)=>response.json()).then((data)=> setProduct(data))
-    console.log(product)
- },[])
- return(
+ useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => setProduct(data))
+ }, []);
+
+ const filteredProducts = useMemo(() => {
+    if (search === "") return product;
+    
+    return product.filter((item) => 
+        item.title.toLowerCase().includes(search.toLowerCase())
+    );
+ }, [product, search]);
+
+ return (
     <>
     <div>
-        <input type="text" placeholder="Search item here"
-        onChange={(e)=>setSearch(e.target.value)}
-        value = {search} />
+        <input
+            type="text"
+            placeholder="Search item here"
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
+        />
     </div>
     <div>
-    {product.filter((item) => {
-        
-        if(search === "") return item ;
-        if (item.title.toLowerCase().includes(search.toLowerCase())) {
-            return item;
-            
-            
-        }
-        console.log(search);
-    }).map((item) => { return <p>{item.title}</p>}) }
+        {filteredProducts.map((item) => (
+            <p key={item.id}>{item.title}</p>
+        ))}
     </div>
-    
     </>
-)
-
-
+ )
 }
+
 export default Fetchmyapi;
