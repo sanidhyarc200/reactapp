@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Fetchmyapi from './vaionex/ankitbhaiyafetch';
+
+import IncrementButtons from './uniquecount/count';
+
 
 
 ReactDOM.render(
  
-    <Fetchmyapi/>,
+    <IncrementButtons/>,
   
   document.getElementById('root')
 );
