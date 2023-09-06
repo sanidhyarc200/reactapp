@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-
-import IncrementButtons from './uniquecount/count';
+import Inputv1 from './Appwizards/input';
 
 
 
 ReactDOM.render(
  
-    <IncrementButtons/>,
+    <Inputv1/>,
   
   document.getElementById('root')
 );
